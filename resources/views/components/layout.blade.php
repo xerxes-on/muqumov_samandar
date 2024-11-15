@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name', 'Blog') }}</title>
-    @vite('resources/css/app.css')
+{{--    @vite('resources/css/app.css')--}}
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body
     class="h-full font-fira-code bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-black transition-colors duration-900">
