@@ -4,15 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name', 'Blog') }}</title>
-{{--    @vite('resources/css/app.css')--}}
+    <link rel="icon" href="./icon.svg" type="image">
+    {{--    @vite('resources/css/app.css')--}}
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body
-    class="h-full font-fira-code bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-black transition-colors duration-900">
-    <x-navbar :settings="$settings"/>
-<main>
+    class="h-full relative font-fira-code bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-black transition-colors duration-900 dark:bg-black flex flex-col">
+<x-navbar :settings="$settings"/>
+
+<main class="flex-grow">
     @yield('content')
 </main>
+
+<footer class="w-screen flex items-center mb-4 justify-center">
+        <span class="text-sm dark:text-gray-800 text-gray-700">
+            Made with 🤍 by <a href="https://xerxes.uz" class="hover:underline">xerxes.uz</a>
+        </span>
+</footer>
 <script>
     if (localStorage.getItem('darkMode') === 'true' ||
         (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -31,7 +39,6 @@
         document.getElementById('darkIcon').classList.toggle('hidden', !isDarkMode);
     });
 </script>
-
 
 
 @yield('scripts')

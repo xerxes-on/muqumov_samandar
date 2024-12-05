@@ -5,7 +5,7 @@
         <div class="text-center">
             <div class="relative w-32 h-32 mx-auto mb-8">
                 <img
-                    src="https://cataas.com/cat"
+                    src="{{ asset('storage/images/'.$settings->main_image)}}"
                     alt="Profile"
                     class="rounded-full object-cover w-full h-full border-4 border-white dark:border-gray-800 shadow-lg"
                 >
